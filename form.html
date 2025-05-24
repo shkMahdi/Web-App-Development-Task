@@ -56,6 +56,33 @@
             </tbody>
         </table>
     </div>
+
+     <script>
+        function submitForm(event) {
+            event.preventDefault(); 
+
+            const firstName = document.getElementById('first-name').value;
+            const lastName = document.getElementById('last-name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('Phone').value;
+            const address = document.getElementById('address').value;
+
+
+            const tableBody = document.getElementById('data-table-body');
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td class="border px-4 py-2">${firstName}</td>
+                <td class="border px-4 py-2">${lastName}</td>
+                <td class="border px-4 py-2">${email}</td>
+                <td class="border px-4 py-2">${phone}</td>
+                <td class="border px-4 py-2">${address}</td>
+            `;
+
+            tableBody.appendChild(newRow);
+
+            event.target.reset();
+        }
+    </script>
 </body>
 
 </html>
